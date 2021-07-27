@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>HTML Table Editors</title>
-  <link rel="stylesheet" type="text/css" href="base.css" />
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>📍🐱📍 CATS Route Editor</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector: "textarea",
+        height: 400,
+        theme: "modern",
+        relative_urls: false,
 
-  <h1>HTML Table Editors</h1>
+        remove_script_host: true,
+        forced_root_block: "p",
 
-  <p>These editors are for when Markdown just doesn't cut it. They are highly configured versions of <a href="https://www.tinymce.com/">TinyMCE</a>. To get the code, just click on the 'source code' button (the last button in the toolbar) and copy and paste.</p>
+        valid_children: "+div[figcaption],+a[div]",
 
-  <ul>
-    <li><a href="generic-tables.html">Editor for generic tables</a> creates tables which can be used anywhere (except they need the 'numeric' class for right-aligning and a 'visuallyhidden' class, which is likely but not guaranteed to be available on most of GOV.UK)</li>
-    <li><a href="financial-tables.html">Editor for financial tables</a> creates tables which can currently only be used in HTML publications on GOV.UK</li>
-  </ul>
+        plugins: [
+          "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+          "searchreplace wordcount visualblocks visualchars code fullscreen",
+          "insertdatetime media nonbreaking save table contextmenu directionality",
+          "template paste textpattern importcss",
+        ],
+        importcss_append: true,
+        importcss_file_filter: "/css/wysiwyg.css",
 
-  <p>Please note, when marking a header cell, some additional styling was added which helps to distinguish them from the other cells as there is otherwise no specific styling for them. That styling (i.e. the green line) will not appear in production.</p>
-
-</body>
+        toolbar1:
+          "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | template",
+        //toolbar2: 'print preview',
+        image_advtab: true,
+        content_css: [
+          "/css/bootstrap.min.css",
+          "/css/main.css",
+          "/css/wysiwyg.css",
+        ],
+      });
+    </script>
+  </head>
+  <body>
+    <noscript>Sorry, this editor only works with JavaScript.</noscript>
+    <div class="page-content">
+      <div class="flex intro">
+        <div>
+          <span class="kitty-pin">📍🐱📍</span>
+          <h1>CATS Route Editor</h1>
+          <p>
+            This is a replica of the WYSIWYG editor on the CATS website. It
+            fixes many of the issues such as not being able to select
+            rows/columns and copy/paste into them.
+          </p>
+        </div>
+      </div>
+      <div class="flex instructions">
+        <div>
+          <h4>How to work it: <img style="width: 2rem" src="https://emoji.slack-edge.com/T026K8F4G/aw_yeah/dadca89224c3a2cd.gif"></h4>
+          <ol>
+            <li>While on a CATS routes page, find and click on "Open WYSIWYG Editor" button.</li>
+            <li>Cick Tools > Source Code. highlight all code (⌘ + a) and copy (⌘ + c)</li>
+            <li>Come back to this page and click Tools > Source Code. Paste the code you just copied in this window (⌘ + v).</li>
+            <li>Vióla, you now have the CATS style table pasted here.</li>
+            <li>🎉🎉 Have fun highlighting and pasting your rows and columns 🎉🎉</li>
+            <li>When you're done, follow the same steps in step 3 to copy your newly edited table and paste it within the CATS WYSIWYG editor.</li>
+          </ol>
+        </div>
+        </div>
+    </div>
+    <div class="wysiwyg">
+      <textarea></textarea>
+    </div>
+  </body>
 </html>

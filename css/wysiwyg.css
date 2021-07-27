@@ -1,0 +1,154 @@
+/*ONLY CONTROLS WYSIWYG APPEARANCE; MUST SYNC WITH FRONT-END STYLES*/
+
+body {
+  background-color: #ffffff !important;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #535155;
+}
+a {
+  color: #667ecf;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #667ecf;
+}
+figcaption {
+  font-size: 13px;
+  font-style: italic;
+  color: #535155;
+  border-bottom: 8px solid #868389;
+  padding: 16px 0;
+}
+
+.callout-left {
+  font-size: 23px;
+  line-height: 115%;
+  color: #fff;
+  border: none;
+  background: #798fd5;
+  text-align: left;
+  float: left;
+  margin: 20px 35px 20px 0;
+  padding: 20px;
+  width: 300px;
+  position: relative;
+  display: block;
+}
+.callout-left:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(204, 204, 204, 0);
+  border-left-color: #798fd5;
+  border-width: 15px;
+  margin-top: -15px;
+}
+
+.callout-right {
+  font-size: 23px;
+  line-height: 115%;
+  color: #fff;
+  border: none;
+  background: #798fd5;
+  text-align: right;
+  float: right;
+  margin: 20px 0 20px 35px;
+  padding: 20px;
+  width: 300px;
+  position: relative;
+  display: block;
+}
+.callout-right:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(204, 204, 204, 0);
+  border-right-color: #798fd5;
+  border-width: 15px;
+  margin-top: -15px;
+}
+
+.table > thead > tr > th {
+  color: #8d9fdb;
+  border-top: 5px solid #8d9fdb;
+  border-bottom: 5px solid #8d9fdb;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.table > tbody > tr > td {
+  line-height: 110%;
+  vertical-align: middle;
+  padding: 10px;
+}
+.table.table-route td,
+.table.table-route th {
+  /*width:11% !important;*/
+  white-space: nowrap;
+}
+.table.table-route .reversed-tbl-row {
+  color: #fff;
+  background: #8d9fdb;
+}
+.table.table-route .tbl-from-to:first-of-type {
+  border-right: 5px solid #8d9fdb;
+}
+.table.table-route .tbl-from-to:only-child {
+  border-right: 0;
+}
+.table.table-route .tbl-location {
+  white-space: normal;
+}
+
+/*OVERRIDE STYLES IN WYSIWYG BUT NOT SHOW IN DROPDOWN BY PRECEDING WITH #TINYMCE ID (used for snippet styles)*/
+#tinymce .embed-responsive {
+  border: 2px dashed #cccbcb;
+} 
+/*solely for ease of wysiwyg use (to easily see edges of TDs)*/
+#tinymce .table {
+  margin-bottom: 20px;
+}
+#tinymce .secondary-photo-right {
+  width: 300px;
+  margin: 20px 0 20px 40px;
+  overflow: hidden;
+  float: right;
+}
+#tinymce .secondary-photo-right img {
+  min-width: 300px;
+}
+#tinymce .secondary-photo-left {
+  width: 300px;
+  margin: 20px 40px 20px 0;
+  overflow: hidden;
+  float: left;
+}
+#tinymce .secondary-photo-left img {
+  min-width: 300px;
+}
+#tinymce .route#related-items {
+  border-bottom: 1px dashed #8d9fdb;
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+}
+#tinymce .table.table-route {
+  width: 100% !important;
+}
