@@ -48,6 +48,7 @@ html {
 .wysiwyg {
     width: 95%;
     margin: 0 auto;
+    padding-bottom: 15rem;
 }
 
 @media screen and (min-width: 1024px) {
